@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MainApp.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240211095801_SeedAdded")]
-    partial class SeedAdded
+    [Migration("20240211173610_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,17 +45,17 @@ namespace MainApp.DataAccess.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CategoryName = "Scifi"
+                            CategoryName = "Male"
                         },
                         new
                         {
                             CategoryId = 2,
-                            CategoryName = "Isekei"
+                            CategoryName = "Female"
                         },
                         new
                         {
                             CategoryId = 3,
-                            CategoryName = "Fantacy"
+                            CategoryName = "Other"
                         });
                 });
 
@@ -92,7 +92,7 @@ namespace MainApp.DataAccess.Migrations
                         {
                             ProductId = 1,
                             CategoryDataId = 1,
-                            ImageUrl = "",
+                            ImageUrl = "/images/products/d01fdb34-f60a-4952-9eb1-9bd9c09d86a9.jpg",
                             ProductName = "firsty",
                             Quantity = 10
                         },
@@ -100,25 +100,9 @@ namespace MainApp.DataAccess.Migrations
                         {
                             ProductId = 2,
                             CategoryDataId = 2,
-                            ImageUrl = "",
+                            ImageUrl = "/images/products/021b827f-cf1a-412a-8c10-189a898dbf44.jpg",
                             ProductName = "secondy",
                             Quantity = 40
-                        },
-                        new
-                        {
-                            ProductId = 3,
-                            CategoryDataId = 3,
-                            ImageUrl = "",
-                            ProductName = "thirdy",
-                            Quantity = 20
-                        },
-                        new
-                        {
-                            ProductId = 4,
-                            CategoryDataId = 2,
-                            ImageUrl = "",
-                            ProductName = "forthdy",
-                            Quantity = 23
                         });
                 });
 

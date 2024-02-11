@@ -1,6 +1,6 @@
 ﻿@model Product
 <h1>Create Product</h1>
-<form class="form" asp-action="Create" method="post">
+<form class="form" asp-action="Create" method="post" enctype="multipart/form-data">
     <div>
         <label  asp-for="ProductName" class="form-label"></label>
         <input class="form-control" asp-for="ProductName"/>
@@ -17,6 +17,10 @@
             <option selected disabled>--Select-Category--</option>
         </select>
         <span asp-validation-for="CategoryDataId" class="text-danger"></span>
+    </div>
+    <div>
+        <label >Product Image</label>
+        <input type="file" class="form-control" name="ImageFile" />
     </div>
     <button class="btn btn-primary mt-3" type="submit">Submit</button>
 </form>

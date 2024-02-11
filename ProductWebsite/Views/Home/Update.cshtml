@@ -1,6 +1,6 @@
 ﻿@model Product
 <h1>Update Product</h1>
-<form class="form" asp-action="Update" method="post">
+<form asp-action="Update" method="post" enctype="multipart/form-data">
     <input hidden asp-for="ProductId" />
     <div>
         <label asp-for="ProductName" class="form-label"></label>
@@ -9,11 +9,20 @@
         </span>
     </div>
     <div>
-
         <label class="form-label" asp-for="Quantity"></label>
         <input class="form-control" asp-for="Quantity" />
         <span asp-validation-for="Quantity" class="text-danger"></span>
-
+    </div>
+    <div>
+        <label class="form-label" asp-for="CategoryDataId"></label>
+        <select class="form-select" asp-items="ViewBag.Categories" asp-for="CategoryDataId">
+            <option selected disabled>--Select-Category--</option>
+        </select>
+        <span asp-validation-for="CategoryDataId" class="text-danger"></span>
+    </div>
+    <div>
+        <label for="ImageFile">Product Image</label>
+        <input type="file" class="form-control" name="ImageFile" id="ImageFile" />
     </div>
     <button class="btn btn-primary mt-3" type="submit">Update</button>
     <a asp-action="Index" class="btn btn-primary mt-3 mx-3" >Go to Home</a>

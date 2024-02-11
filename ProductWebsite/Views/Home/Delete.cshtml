@@ -1,6 +1,7 @@
 ﻿@model Product
 <h1>Delete Product</h1>
 <form class="form" asp-action="Delete" method="post">
+    <input hidden asp-for="ImageUrl" />
     <input hidden asp-for="ProductId" />
     <input hidden asp-for="ProductName" />
     <input hidden asp-for="Quantity" />

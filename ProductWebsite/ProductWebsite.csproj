@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\images\NewFolder\**" />
+    <Content Remove="wwwroot\images\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\images\NewFolder\**" />
+    <None Remove="wwwroot\images\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
       <PrivateAssets>all</PrivateAssets>
@@ -22,6 +29,10 @@
   <ItemGroup>
     <ProjectReference Include="..\MainApp.Models\MainApp.Models.csproj" />
     <ProjectReference Include="..\MainWeb.DataAccess\MainApp.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\products\" />
   </ItemGroup>
 
 </Project>

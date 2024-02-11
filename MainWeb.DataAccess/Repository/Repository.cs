@@ -14,22 +14,32 @@ namespace MainApp.DataAccess.Repository
         {
                 _db = db;
                 this.dbset = _db.Set<T>();
+            _db.Product.Include(u => u.Category).Include(u => u.CategoryDataId);
         }
         public void Add(T entity)
         {
             dbset.Add(entity);
         }
 
-        public T Get(Expression<Func<T, bool>> filter)
+        public T Get(Expression<Func<T, bool>> filter, bool includeDataPara = false)
         {
             IQueryable<T> query = dbset.Where(filter);
+            if (includeDataPara)
+            {
+                query = query.Include("Category");
+
+            }
             return query.FirstOrDefault();
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(bool includeDataPara=false)
         {
             IQueryable<T> query = dbset;
+            if (includeDataPara)
+            {
+            query=query.Include("Category");
 
+            }
             return query.ToList();
         }
 

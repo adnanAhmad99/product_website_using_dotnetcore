@@ -7,7 +7,7 @@
 namespace MainApp.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class SeedAdded : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,9 +52,9 @@ namespace MainApp.DataAccess.Migrations
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[,]
                 {
-                    { 1, "Scifi" },
-                    { 2, "Isekei" },
-                    { 3, "Fantacy" }
+                    { 1, "Male" },
+                    { 2, "Female" },
+                    { 3, "Other" }
                 });
 
             migrationBuilder.InsertData(
@@ -62,10 +62,8 @@ namespace MainApp.DataAccess.Migrations
                 columns: new[] { "ProductId", "CategoryDataId", "ImageUrl", "ProductName", "Quantity" },
                 values: new object[,]
                 {
-                    { 1, 1, "", "firsty", 10 },
-                    { 2, 2, "", "secondy", 40 },
-                    { 3, 3, "", "thirdy", 20 },
-                    { 4, 2, "", "forthdy", 23 }
+                    { 1, 1, "/images/products/d01fdb34-f60a-4952-9eb1-9bd9c09d86a9.jpg", "firsty", 10 },
+                    { 2, 2, "/images/products/021b827f-cf1a-412a-8c10-189a898dbf44.jpg", "secondy", 40 }
                 });
 
             migrationBuilder.CreateIndex(
