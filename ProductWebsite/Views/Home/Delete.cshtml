@@ -1,11 +1,11 @@
 ﻿@model Product
 <h1>Delete Product</h1>
 <form class="form" asp-action="Delete" method="post">
-    <input hidden asp-for="Id" />
+    <input hidden asp-for="ProductId" />
     <input hidden asp-for="ProductName" />
     <input hidden asp-for="Quantity" />
     <ul class="list-group">
-        <li class="list-group-item">@Model.Id</li>
+        <li class="list-group-item">@Model.ProductId</li>
         <li class="list-group-item">@Model.ProductName</li>
         <li class="list-group-item">@Model.Quantity</li>
     </ul>

@@ -8,17 +8,26 @@ namespace MainApp.DataAccess.Data
         public ApplicationDbContext(DbContextOptions options) : base(options) { }
         
         public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Product>().HasData(
-                new Product { Id=1,ProductName="firsty",Quantity=10, ImageUrl=""},
-                new Product { Id=2,ProductName="firsty",Quantity=40, ImageUrl=""},
-                new Product { Id=3,ProductName="firsty",Quantity=20, ImageUrl=""},
-                new Product { Id=4,ProductName="firsty",Quantity=23, ImageUrl = "" }
+            modelBuilder.Entity<Category>().HasData(
+                new Category { CategoryId = 1, CategoryName = "Scifi" },
+                new Category { CategoryId = 2, CategoryName = "Isekei" },
+                new Category { CategoryId = 3, CategoryName = "Fantacy" }
                 );
+
+            modelBuilder.Entity<Product>().HasData(
+                new Product { ProductId = 1, ProductName = "firsty", Quantity = 10, ImageUrl = "", CategoryDataId = 1 },
+                new Product { ProductId = 2, ProductName = "secondy", Quantity = 40, ImageUrl = "", CategoryDataId = 2 },
+                new Product { ProductId = 3, ProductName = "thirdy", Quantity = 20, ImageUrl = "", CategoryDataId = 3 },
+                new Product { ProductId = 4, ProductName = "forthdy", Quantity = 23, ImageUrl = "", CategoryDataId = 2 }
+                );             
+
+               
         }
     }
 }
